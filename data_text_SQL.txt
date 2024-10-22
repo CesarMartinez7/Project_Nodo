@@ -1,0 +1,25 @@
+reate database nodoMobiliario;
+
+create table Productos(
+	ID_producto int NOT NULL auto_increment PRIMARY KEY,
+    Nombre varchar(200),
+    Categoria varchar(200),
+    Dimension varchar(240)
+);
+
+create table Inventario(
+	ID_producto int NOT NULL,
+	FOREIGN KEY (ID_producto) references Productos(ID_producto),
+    Cantidad int 
+);
+
+
+
+
+INSERT INTO inventario(Cantidad) values (20,1);
+
+SELECT Cantidad,
+       CASE 
+           WHEN Cantidad < 5 THEN "Se acabaron los productos"
+       END AS customer_type
+FROM inventario;
